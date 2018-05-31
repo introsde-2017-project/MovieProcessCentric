@@ -1,6 +1,7 @@
 package introsde.project.process.movie.rest.resources;
 
 
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
@@ -63,12 +64,15 @@ public class MovieResource {
 	    @Path("/add/rating/m/{itemId}/{rating}")
 	    @PUT
 	    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+	    @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
 	    public Response addFoodRatings(@Context HttpHeaders headers,@PathParam("itemId") String itemId,@PathParam("rating") int rating) {
 	    	try {
 	        	System.out.println("adding feedback " +(double) (rating-3)/2);
 	        	
 	        	String authString = headers.getRequestHeader("authorization").get(0);
 	        	String token = authString.substring("Bearer".length()).trim();
+	        	
+	        	System.out.println(token);
 	        	
 	        	Person u=getAuthenticationToken(token);
 	        	if(!token.equals(u.getToken()))
@@ -80,7 +84,7 @@ public class MovieResource {
 	        	
 	    	}
 	    	catch (Exception e){
-	    		return Response.status(Response.Status.BAD_REQUEST).build();
+	    		return Response.status(Response.Status.UNAUTHORIZED).build();
 	    	}
 	    }
 	    
