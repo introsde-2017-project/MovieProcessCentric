@@ -63,7 +63,7 @@ public class MovieResource {
 	    }
 	    
 	    @Path("/add/rating/m/{itemId}/{rating}")
-	    @POST
+	    @GET
 	    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
 	    @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
 	    public Response addFoodRatings(@Context HttpHeaders headers,@PathParam("itemId") String itemId,@PathParam("rating") int rating) {
