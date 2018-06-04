@@ -17,6 +17,7 @@ import introsde.project.process.movie.rest.model.BusinessService;
 @Path("/secure")
 public class MovieResource {
 	
+	
 	//get 5 food recommendation for a user
 	 @Path("/recom/m/{quantity}")
 	    @GET
