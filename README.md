@@ -11,4 +11,4 @@ heroku create NAME-OF-HEROKU-APP
 git push heroku master 
 
 ```
-in my project NAME-OF-HEROKU-APP="foodprocess"
+in my project NAME-OF-HEROKU-APP="movieprocess"
