@@ -3,9 +3,7 @@ package introsde.project.process.movie.rest.model;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 
 import introsde.project.adopter.recombee.soap.Evaluation;
 import introsde.project.adopter.recombee.soap.ItemObject;
@@ -33,21 +31,20 @@ public class BusinessService {
 	public static boolean addMovieRating(Person person, Evaluation rating) {
 		return serviceInt.addNewRating(dbName, rating);
 	}
-
-	@SuppressWarnings("unchecked")
-	public static Map<String,Object> getMovie(String movieName) {
-		return (Map<String, Object>) serviceInt.getItem(dbName, movieName);
+	
+	public static List<ItemObject> getAllMovie() {
+		return serviceInt.getAllItem(dbName);
 	}
 
 	public static List<Evaluation> getUserRatings(Person u) {
-		List<Evaluation> e= new LinkedList<Evaluation>();
-		for(Evaluation ev:serviceInt.getUserRatings(dbName, u)) {
-			System.out.println(ev.getItemId());
-			double r=ev.getRating();
-			ev.setRating((r*2)+3);
-			e.add(ev);
-		}
-		return e;
+//		List<Evaluation> e= new LinkedList<Evaluation>();
+//		for(Evaluation ev:serviceInt.getUserRatings(dbName, u)) {
+//			System.out.println(ev.getItemId());
+//			double r=ev.getRating();
+//			ev.setRating((r*2)+3);
+//			e.add(ev);
+//		}
+		return serviceInt.getUserRatings(dbName, u);
 	}
 	
 

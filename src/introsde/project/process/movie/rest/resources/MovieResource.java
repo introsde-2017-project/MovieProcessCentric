@@ -43,7 +43,7 @@ public class MovieResource {
 	    @Path("/get/myratings/m")
 	    @GET
 	    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON}) 
-	    public Response getfoodRatings(@Context HttpHeaders headers) {
+	    public Response getRatings(@Context HttpHeaders headers) {
 	    	try {
 	        	System.out.println("getting all user feedbacks");
 	        	
@@ -60,11 +60,31 @@ public class MovieResource {
 	    	}
 	    }
 	    
+	    @Path("/getall/m")
+	    @GET
+	    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON}) 
+	    public Response getAllMovies(@Context HttpHeaders headers) {
+	    	try {
+	        	System.out.println("getting all user feedbacks");
+	        	
+	        	String authString = headers.getRequestHeader("authorization").get(0);
+	        	String token = authString.substring("Bearer".length()).trim();
+	        	
+	        	Person u=getAuthenticationToken(token);
+	        	if(!token.equals(u.getToken()))
+	        		throw new Exception();
+	        	return Response.ok(BusinessService.getAllMovie()).build();
+	    	}
+	    	catch (Exception e){
+	    		return Response.status(Response.Status.UNAUTHORIZED).build();
+	    	}
+	    }
+	    
 	    @Path("/add/rating/m/{itemId}/{rating}")
 	    @GET
 	    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
 	    @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-	    public Response addFoodRatings(@Context HttpHeaders headers,@PathParam("itemId") String itemId,@PathParam("rating") int rating) {
+	    public Response addRatings(@Context HttpHeaders headers,@PathParam("itemId") String itemId,@PathParam("rating") int rating) {
 	    	try {
 	        	System.out.println("adding feedback " +(double) (rating-3)/2);
 	        	
@@ -90,7 +110,7 @@ public class MovieResource {
 	    @Path("/getbytype/m/{movieGen}")
 	    @GET
 	    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-	    public Response getFoodByType(@Context HttpHeaders headers, @PathParam("movieGen") String movieGen){
+	    public Response getMovieByType(@Context HttpHeaders headers, @PathParam("movieGen") String movieGen){
 	    	try {
 	        	System.out.println("search Food by given Types: ");
 	        	
