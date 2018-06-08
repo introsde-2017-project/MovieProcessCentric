@@ -20,8 +20,7 @@ It has the following directories.
          
      |itemId|rating|dateTime|userId|       
      |------|------|--------|------|      
-     
-     - `ItemObject.java` This class tells us about the item i.e its id,type and location.
+       - `ItemObject.java` This class tells us about the item i.e its id,type and location.
        
      |itemId|Type|Location|           
      |------|----|--------|   
