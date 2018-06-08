@@ -20,7 +20,12 @@ It has the following directories.
          
      |itemId|rating|dateTime|userId|       
      |------|------|--------|------|      
-          
+     
+       - `ItemObject.java` This class tells us about the item i.e its id,type and location.
+       
+     |itemId|Type|Location|           
+     |------|----|--------|   
+       
 * business/soap  
 * data/local/soap  
 * process/movie/rest  
