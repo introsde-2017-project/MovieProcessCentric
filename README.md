@@ -25,7 +25,9 @@ It has the following directories.
        
      |itemId|Type|Location|           
      |------|----|--------|   
-       
+     
+   * `ObjectFactory.java` This object contains factory methods for each Java content interface and Java element interface.  
+   * `RecombeeDBType.java` Its basic function is to search the specified value and then return that database i.e movie,food.     
 * business/soap  
 * data/local/soap  
 * process/movie/rest  
