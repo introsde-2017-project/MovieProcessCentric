@@ -46,14 +46,21 @@ It has the following directories.
    *  `UpdateUser.java	`  
      
   
-     
-     
-     
-     
-     
 * data/local/soap  
-* process/movie/rest  
-
+* process/movie/rest : It has two packages 
+  1) model : it has two classes  
+    **BusinessService.java  
+        
+        * Method 1 `getPersonByU(String userName)` it gets person by its username.      
+        * Method 2 `getMovieRecom(Person person, int quantity)` it recommends movies to the person.  
+        * Method 3 `addMovieRating(Person person, Evaluation rating)` it gives rating to the item by person.    
+        * Method 4 `getAllMovie()` it returns the list of all the movies.    
+        * Method 5 `getUserRatings(Person u)` it returns the list of all the ratings made by person u.  
+        * Method 6 `getMovieByGen(String movieGen)` this method returns the list of all the movies of the specific genere.    
+        * Method 7 `getPersonByToken(String token)` it returns person by its token.    
+        * Method 8 `getMovieGens()` it returns all the genere of movies.   
+        * Method 9 `addUserRatings(Person u, double d, String itemId)`  it adds ratings to items by specific user.  
+  2) resources  
 ## Execution:    
 1: clone or download the code from server git repo.    
 2: run following commands on command line     
