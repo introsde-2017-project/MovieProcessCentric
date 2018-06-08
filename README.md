@@ -14,11 +14,11 @@ Server Git ripo:
 Client Git riop:  
 
 ## Architecture : 
-                 It has the following directories.  
-                 *adopter/recombee/soap  
-                 *business/soap  
-                 *data/local/soap  
-                 *process/movie/rest  
+It has the following directories.  
+* adopter/recombee/soap  
+* business/soap  
+* data/local/soap  
+* process/movie/rest  
 
 ## Execution:    
 1: clone or download the code from server git repo.    
