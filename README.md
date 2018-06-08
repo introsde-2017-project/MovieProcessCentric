@@ -15,7 +15,11 @@ Client Git riop:
 
 ## Architecture : 
 It has the following directories.  
-* adopter/recombee/soap  
+* adopter/recombee/soap : it has many different java files and their execution files.  
+       - `Evaluation.java` has following attributes  
+         
+           |itemId|rating|dateTime|userId|   
+           |------|------|--------|------|    
 * business/soap  
 * data/local/soap  
 * process/movie/rest  
