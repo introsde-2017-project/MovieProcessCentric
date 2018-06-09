@@ -37,13 +37,6 @@ public class BusinessService {
 	}
 
 	public static List<Evaluation> getUserRatings(Person u) {
-//		List<Evaluation> e= new LinkedList<Evaluation>();
-//		for(Evaluation ev:serviceInt.getUserRatings(dbName, u)) {
-//			System.out.println(ev.getItemId());
-//			double r=ev.getRating();
-//			ev.setRating((r*2)+3);
-//			e.add(ev);
-//		}
 		return serviceInt.getUserRatings(dbName, u);
 	}
 	
